@@ -11,8 +11,7 @@ Features
 ________________________________________
 Technologies Used
 •	Java 17
-•	Spring Boot 3.x (Spring Web, Spring Data JPA)
-•	MySQL 8.x
+•	Spring Boot 3.x (Spring Web)
 •	Maven for dependency management
 •	Lombok (optional)
 •	SecureRandom for secure random number generation
