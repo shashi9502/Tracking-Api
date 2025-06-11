@@ -1,11 +1,6 @@
 package com.Tracking_API.Entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-
-import java.time.OffsetDateTime;
-
-@Entity
+/*@Entity
 @Table(name = "tracking_numbers", uniqueConstraints = {
         @UniqueConstraint(columnNames = "trackingNumber")
 })
@@ -13,10 +8,10 @@ import java.time.OffsetDateTime;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString*/
 public class TrackingNumber {
 
-    @Id
+   /* @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -24,5 +19,5 @@ public class TrackingNumber {
     private String trackingNumber;
 
     @Column(nullable = false)
-    private OffsetDateTime createdAt;
+    private OffsetDateTime createdAt;*/
 }

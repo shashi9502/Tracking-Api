@@ -8,6 +8,5 @@ public class TrackingApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TrackingApiApplication.class, args);
-		System.out.println("wellcome my world ");
 	}
 }
