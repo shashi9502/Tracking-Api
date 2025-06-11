@@ -1,7 +1,6 @@
 Scalable Tracking Number Generator API
 Overview
 This project is a RESTful API built with Spring Boot and Java 17 that generates unique tracking numbers for parcels. It is designed to be scalable, efficient, and capable of handling high concurrency.
-The API generates tracking numbers that conform to a specific regex pattern and ensures uniqueness by storing generated numbers in a MySQL database.
 ________________________________________
 Features
 •	Generates unique tracking numbers matching the pattern ^[A-Z0-9]{1,16}$
