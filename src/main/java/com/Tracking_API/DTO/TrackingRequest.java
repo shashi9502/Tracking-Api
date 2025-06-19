@@ -11,13 +11,13 @@ import java.util.UUID;
 
 
 public record TrackingRequest(
-        @NotBlank String origin_country_id,
-        @NotBlank String destination_country_id,
+        @NotBlank String originCountryId,
+        @NotBlank String destinationCountryId,
         @NotNull BigDecimal weight,
-        @NotNull OffsetDateTime created_at,
-        @NotNull UUID customer_id,
-        @NotBlank String customer_name,
-        @NotBlank String customer_slug
+        @NotNull OffsetDateTime createdAt,
+        @NotNull UUID customerId,
+        @NotBlank String customerName,
+        @NotBlank String customerSlug
 ) {
 	
 }

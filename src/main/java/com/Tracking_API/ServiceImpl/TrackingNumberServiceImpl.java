@@ -17,6 +17,13 @@ public class TrackingNumberServiceImpl implements TrackingNumService {
 	 private static final Logger log = LoggerFactory.getLogger(TrackingNumberServiceImpl.class);
     @Override
     public synchronized TrackingResponse generateTrackingNumber(TrackingRequest request)  {
+    	if (request == null
+                || request.originCountryId() == null || request.originCountryId().isBlank()
+                || request.destinationCountryId() == null || request.destinationCountryId().isBlank()
+                || request.customerSlug() == null || request.customerSlug().isBlank()) {
+            log.error("Invalid tracking request: {}", request);
+            throw new TrackerException("Invalid tracking request.");
+        }
     	try {
     	log.info("tracking request info {}:",request);
         String trackingNumber = generateUniqueTrackingNumber(request);
@@ -30,9 +37,9 @@ public class TrackingNumberServiceImpl implements TrackingNumService {
     }
 
     public String generateUniqueTrackingNumber(TrackingRequest request) {
-        String base = (request.origin_country_id().toUpperCase()
-                + request.destination_country_id().toUpperCase()
-                + request.customer_slug().replace("-", "").toUpperCase()
+        String base = (request.originCountryId().toUpperCase()
+                + request.destinationCountryId().toUpperCase()
+                + request.customerSlug().replace("-", "").toUpperCase()
                 + UUID.randomUUID().toString().replace("-", "").substring(0, 6));
         String trackingNumber = base.substring(0, Math.min(base.length(), 16));
         return trackingNumber;
